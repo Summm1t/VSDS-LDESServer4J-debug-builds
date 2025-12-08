@@ -300,6 +300,7 @@ public class FragmentationSteps extends LdesServerIntegrationTest {
         log.atDebug().log("Then I wait until all members are fragmented");
         await().atMost(30, SECONDS)
                 .pollInterval(1, SECONDS)
+                .during(3, SECONDS)
                 .until(() -> unprocessedViewRepository.findAll().isEmpty());
     }
 
