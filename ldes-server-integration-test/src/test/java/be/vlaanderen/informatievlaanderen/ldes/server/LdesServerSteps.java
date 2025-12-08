@@ -314,7 +314,7 @@ public class LdesServerSteps extends LdesServerIntegrationTest {
 
     @And("the LDES {string} contains {int} members")
     public void theLDESContainsMembers(String collection, int expectedMemberCount) {
-        log.atDebug().log("And the LDES {} contains {} members", collection, expectedMemberCount);
+        log.atDebug().log("Then the LDES {} contains {} members", collection, expectedMemberCount);
         await().atMost(60, SECONDS)
                 .pollDelay(Duration.ofSeconds(1))
                 .until(() -> jdbcTemplate
